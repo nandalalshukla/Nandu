@@ -1,10 +1,28 @@
-
-import React from 'react'
+import React from "react";
 
 const Resume = () => {
   return (
-    <div>Resume</div>
-  )
-}
+    <div className="relative inline-block group">
+      <a href="/resume.pdf" download className=" rounded-lg">
+        Download Resume
+      </a>
 
-export default Resume
+      <div
+        className="absolute bottom-full mb-4 left-1/2 translate-x-1/2 
+    opacity-0 scale-95 
+    group-hover:opacity-100 group-hover:scale-100 
+    transition-all duration-300 
+    w-64 h-80 bg-white rounded-xl shadow-xl overflow-hidden"
+      >
+        <img src="/resume.jpg" className="w-full h-full object-cover" />
+
+        <div
+          className="absolute -bottom-2 left-1/2 -translate-x-1/2 
+      w-4 h-4 bg-white rotate-45"
+        />
+      </div>
+    </div>
+  );
+};
+
+export default Resume;

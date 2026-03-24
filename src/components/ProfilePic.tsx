@@ -1,8 +1,10 @@
-import React from 'react'
-
+import nandalal from "../../public/nandalal.jpg"
 const ProfilePic = () => {
   return (
-    <div>ProfilePic</div>
+    <div className="w-50 overflow-hidden border-2 dark:border-gray-500 border-gray-700">
+      <img src={nandalal} alt="Nandalal Shukla"
+      className="h-full w-full object-cover"/>
+    </div>
   )
 }
 
