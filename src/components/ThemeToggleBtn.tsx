@@ -1,11 +1,12 @@
 import { useTheme } from "../hooks/hooks";
-
-export function MyToggle() {
+import { GoSun } from "react-icons/go";
+import { IoMoon } from "react-icons/io5";
+export function ThemeToggle() {
   const { theme, setTheme } = useTheme();
 
   return (
     <button onClick={() => setTheme(theme === "dark" ? "light" : "dark")}>
-      {theme === "dark" ? "🌙 Dark" : "☀️ Light"}
+      {theme === "dark" ? <IoMoon/> : <GoSun/>}
     </button>
   );
 }
