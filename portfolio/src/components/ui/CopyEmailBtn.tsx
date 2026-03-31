@@ -1,0 +1,22 @@
+"use client";
+import { useState } from "react";
+
+const CopyEmailBtn = () => {
+    const email = "shuklanandalal@gmail.com";
+    const [copied, setCopied] = useState(false);
+    const handleCopy = async () => {
+        await navigator.clipboard.writeText(email);
+        setCopied(true);
+        setTimeout(() => setCopied(false), 2000);
+        }
+    return (
+      <button
+        onClick={handleCopy}
+        className={`px-4 py-2 rounded-lg transition-all duration-300 hover:cursor-pointer bg-gray-800`}
+      >
+        {copied ? "Copied!" : "Copy Email"}
+      </button>
+    );
+};
+
+export default CopyEmailBtn;
