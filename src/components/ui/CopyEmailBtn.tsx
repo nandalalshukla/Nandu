@@ -12,7 +12,7 @@ const CopyEmailBtn = () => {
     return (
       <button
         onClick={handleCopy}
-        className={`px-4 py-2 rounded-lg transition-all duration-300 hover:cursor-pointer bg-gray-800`}
+        className={`px-4 py-2 rounded-lg hover:cursor-pointer bg-gray-200 dark:bg-gray-700 `}
       >
         {copied ? "Copied!" : "Copy Email"}
       </button>
