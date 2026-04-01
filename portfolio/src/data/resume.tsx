@@ -1,16 +1,15 @@
-import { Icons } from "@/components/icons";
+import { ExpressJsIcon, Icons } from "@/components/icons";
 import { HomeIcon, NotebookIcon, Brain } from "lucide-react";
-import { ReactLight } from "@/components/ui/svgs/reactLight";
-import { NextjsIconDark } from "@/components/ui/svgs/nextjsIconDark";
-import { Typescript } from "@/components/ui/svgs/typescript";
-import { Nodejs } from "@/components/ui/svgs/nodejs";
-import { Python } from "@/components/ui/svgs/python";
-import { Golang } from "@/components/ui/svgs/golang";
-import { Postgresql } from "@/components/ui/svgs/postgresql";
-import { Docker } from "@/components/ui/svgs/docker";
-import { Kubernetes } from "@/components/ui/svgs/kubernetes";
-import { Java } from "@/components/ui/svgs/java";
-import { Csharp } from "@/components/ui/svgs/csharp";
+import { ReactLight } from "@/components/icons/svgs/reactLight";
+import { NextjsIconDark } from "@/components/icons/svgs/nextjsIconDark";
+import { Typescript } from "@/components/icons/svgs/typescript";
+import { Nodejs } from "@/components/icons/svgs/nodejs";
+import { Python } from "@/components/icons/svgs/python";
+import { Postgresql } from "@/components/icons/svgs/postgresql";
+import { Docker } from "@/components/icons/svgs/docker";
+import { Kubernetes } from "@/components/icons/svgs/kubernetes";
+import { Java } from "@/components/icons/svgs/java";
+import { Csharp } from "@/components/icons/svgs/csharp";
 
 export const DATA = {
   name: "Nandalal Shukla",
@@ -23,6 +22,9 @@ export const DATA = {
   summary:
     "Full Stack developer with 1+ years of experience in building production-grade projects. I contribute to Open Source, and regularly participate in hackathons and tech events. Beyond fullstack development, I am also passionate about community-driven technology, content creation and entrepreneurship.",
   avatarUrl: "/me.png",
+  //add light icons for light mode and dark icons for dark mode for each skill for icons available in the my svg and icons folder
+  //also add new skills and icons for them if not available in the icons folder
+  //my skills are: supabase, firebase, linux, git, github, redis, zod, zustand, react query, prisma, tailwind css, vercel, openai, eslint, figma, postman, npm, bun, express.js,
   skills: [
     { name: "React", icon: ReactLight },
     { name: "Next.js", icon: NextjsIconDark },
@@ -30,12 +32,31 @@ export const DATA = {
     { name: "Node.js", icon: Nodejs },
     { name: "Python", icon: Python },
     { name: "Java", icon: Java },
-    { name: "C#", icon: Csharp },
     { name: "PostgreSQL", icon: Postgresql },
     { name: "Docker", icon: Docker },
     { name: "Kubernetes", icon: Kubernetes },
-    { name: "Golang", icon: Golang },
     { name: "AI Agents", icon: Brain },
+    { name: "Express.js", icon: ExpressJsIcon },
+    { name: "Git", icon: Icons.git },
+    { name: "GitHub", icon: Icons.github },
+    { name: "Bash", icon: Icons.bash },
+    { name: "Firebase", icon: Icons.firebase },
+    { name: "Supabase", icon: Icons.supabase },
+    {name: "Mongodb", icon: Icons.mongodb},
+    { name: "Redis", icon: Icons.redis },
+    { name: "Zod", icon: Icons.zod },
+    { name: "Zustand", icon: Icons.zustand },
+    { name: "React Query", icon: Icons.reactQuery },
+    {name: "React Hook Form", icon: Icons.reactHookForm},
+    { name: "Prisma", icon: Icons.prisma },
+    { name: "Tailwind CSS", icon: Icons.tailwindCss },
+    { name: "Vercel", icon: Icons.vercel },
+    { name: "OpenAI", icon: Icons.openai },
+    { name: "ESLint", icon: Icons.eslint },
+    { name: "Figma", icon: Icons.figma },
+    { name: "Postman", icon: Icons.postman },
+    { name: "NPM", icon: Icons.npm },
+    { name: "Bun", icon: Icons.bun },
   ],
   navbar: [
     { href: "/", icon: HomeIcon, label: "Home" },
