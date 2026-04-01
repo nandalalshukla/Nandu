@@ -1,0 +1,10 @@
+{
+  "name": "nandu-monorepo",
+  "private": true,
+  "packageManager": "pnpm@10.0.0",
+  "scripts": {
+    "dev": "pnpm --dir portfolio dev",
+    "build": "pnpm --dir portfolio build",
+    "start": "pnpm --dir portfolio start"
+  }
+}
