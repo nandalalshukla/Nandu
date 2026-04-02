@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
+
 import { useState } from "react";
 import {
   Accordion,
@@ -8,19 +9,8 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { DATA } from "@/data/resume";
-import { Icons } from "@/components/icons";
-import { ChevronDown, ChevronRight, Globe, Github, Sparkles } from "lucide-react";
+import { ChevronDown, ChevronRight } from "lucide-react";
 import { cn } from "@/lib/utils";
-import Link from "next/link";
-
-const toolIconByName = Object.fromEntries(
-  DATA.skills.map((skill) => [skill.name, skill.icon]),
-);
-
-const fallbackToolIcons: Record<string, React.ComponentType<{ className?: string }>> = {
-  GitHub: Icons.github,
-  Nodemailer: Icons.email,
-};
 
 function LogoImage({ src, alt }: { src: string; alt: string }) {
   const [imageError, setImageError] = useState(false);
@@ -65,22 +55,22 @@ function PointList({
   );
 }
 
-export default function WorkSection() {
+export default function EducationSection() {
   return (
     <Accordion type="single" collapsible className="w-full grid gap-6">
-      {DATA.work.map((work) => (
+      {DATA.education.map((education) => (
         <AccordionItem
-          key={work.company}
-          value={work.company}
+          key={education.school}
+          value={education.school}
           className="w-full border-b-0 grid gap-2"
         >
           <AccordionTrigger className="hover:no-underline p-0 cursor-pointer transition-colors rounded-none group [&>svg]:hidden">
             <div className="flex items-center gap-x-3 justify-between w-full text-left">
               <div className="flex items-center gap-x-3 flex-1 min-w-0">
-                <LogoImage src={work.logoUrl} alt={work.company} />
+                <LogoImage src={education.logoUrl} alt={education.school} />
                 <div className="flex-1 min-w-0 gap-0.5 flex flex-col">
                   <div className="font-semibold leading-none flex items-center gap-2">
-                    {work.company}
+                    {education.school}
                     <span className="relative inline-flex items-center w-3.5 h-3.5">
                       <ChevronRight
                         className={cn(
@@ -100,82 +90,33 @@ export default function WorkSection() {
                     </span>
                   </div>
                   <div className="font-sans text-sm text-muted-foreground">
-                    {work.title}
+                    {education.program} - {education.specialization}
                   </div>
                 </div>
               </div>
               <div className="flex items-center gap-1 text-xs tabular-nums text-muted-foreground text-right flex-none">
                 <span>
-                  {work.start} - {work.end ?? "Present"}
+                  {education.start} - {education.end}
                 </span>
               </div>
             </div>
           </AccordionTrigger>
           <AccordionContent className="mt-4 space-y-4 text-sm text-muted-foreground">
             <div className="space-y-2">
-              <h3 className="font-semibold text-foreground">What I Did</h3>
-              <PointList items={work.work} accentClassName="bg-foreground/80" />
+              <h3 className="font-semibold text-foreground">Education Details</h3>
+              <PointList
+                items={education.details}
+                accentClassName="bg-foreground/80"
+              />
             </div>
 
-            {work.impact && (
+            {education.highlights && education.highlights.length > 0 && (
               <div className="space-y-3">
-                <h3 className="font-semibold text-foreground">Impact & Results</h3>
-         
-                  <PointList
-                    items={work.impact}
-                    accentClassName="bg-foreground"
-                  />
-         
-              </div>
-            )}
-
-            {work.tools && work.tools.length > 0 && (
-              <div className="space-y-3">
-                <h3 className="font-semibold text-foreground">Tech Used</h3>
-                <div className="flex flex-wrap gap-2">
-                  {work.tools.map((tool) => {
-                    const Icon =
-                      toolIconByName[tool] ?? fallbackToolIcons[tool] ?? Sparkles;
-
-                    return (
-                      <div
-                        key={tool}
-                        className="inline-flex items-center gap-2 rounded-full border border-border bg-background px-3 py-1.5 text-xs font-medium text-foreground"
-                      >
-                        <Icon className="size-3.5 shrink-0" />
-                        <span>{tool}</span>
-                      </div>
-                    );
-                  })}
-                </div>
-              </div>
-            )}
-
-            {work.urls && work.urls.length > 0 && (
-              <div className="space-y-3">
-                <h3 className="font-semibold text-foreground">Proof of Work</h3>
-                <div className="flex flex-wrap gap-3">
-                  {work.urls.map((url) => {
-                    const isGithub = url.href.includes("github.com");
-                    return (
-                      <Link
-                        key={url.href}
-                        href={url.href}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 rounded-lg border border-border bg-muted/60 px-3 py-2 text-sm font-medium text-foreground transition-colors hover:bg-muted"
-                      >
-                        {isGithub ? (
-                          <Icons.github className="w-4 h-4" />
-                        ) : (
-                          <Icons.globe className="w-4 h-4" />
-                        )}
-                        <span>{url.label}</span>
-
-                      </Link>
-                    );
-                  })}
-                </div>
+                <h3 className="font-semibold text-foreground">Highlights</h3>
+                <PointList
+                  items={education.highlights}
+                  accentClassName="bg-foreground"
+                />
               </div>
             )}
           </AccordionContent>

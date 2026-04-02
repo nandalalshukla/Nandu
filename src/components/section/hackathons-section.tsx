@@ -1,12 +1,36 @@
 /* eslint-disable @next/next/no-img-element */
-import { Badge } from "@/components/ui/badge";
 import Link from "next/link";
 import { DATA } from "@/data/resume";
+import { Icons } from "@/components/icons";
 import {
   Timeline,
   TimelineItem,
   TimelineConnectItem,
 } from "@/components/timeline";
+import { ArrowUpRight, PlayCircle } from "lucide-react";
+
+function getHackathonLinkMeta(label: string, href: string) {
+  const normalized = `${label} ${href}`.toLowerCase();
+
+  if (normalized.includes("youtube") || normalized.includes("youtu.be")) {
+    return {
+      icon: PlayCircle,
+      text: label || "Watch Demo",
+    };
+  }
+
+  if (normalized.includes("github")) {
+    return {
+      icon: Icons.github,
+      text: label || "GitHub",
+    };
+  }
+
+  return {
+    icon: Icons.globe,
+    text: label || "Visit Link",
+  };
+}
 
 export default function HackathonsSection() {
   return (
@@ -75,19 +99,25 @@ export default function HackathonsSection() {
                 )}
                 {hackathon.links && hackathon.links.length > 0 && (
                   <div className="mt-1 flex flex-row flex-wrap items-start gap-2">
-                    {hackathon.links.map((link: any, idx: number) => (
+                    {hackathon.links.map((link, idx) => {
+                      const { icon: Icon, text } = getHackathonLinkMeta(
+                        link.label,
+                        link.href,
+                      );
+
+                      return (
                       <Link
                         href={link.href}
                         key={idx}
                         target="_blank"
                         rel="noopener noreferrer"
+                        className="group inline-flex items-center gap-2 rounded-full border border-border bg-background px-3 py-2 text-xs font-medium text-foreground transition-all hover:border-foreground/20 hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
                       >
-                        <Badge className="flex items-center gap-1.5 text-xs bg-primary text-primary-foreground">
-                          {link.icon}
-                          {link.title}
-                        </Badge>
+                        <Icon className="size-3.5 shrink-0" />
+                        <span>{text}</span>
+                        <ArrowUpRight className="size-3.5 shrink-0 text-muted-foreground transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
                       </Link>
-                    ))}
+                    )})}
                   </div>
                 )}
               </div>

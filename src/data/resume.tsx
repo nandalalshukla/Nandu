@@ -19,8 +19,23 @@ export const DATA = {
   locationLink: "https://www.google.com/maps/place/greater+noida",
   description:
     "Full-Stack Developer | Building production-grade web applications with React, Next.js, and Node.js and typescript. Turning ideas into products that users actually love.",
-  summary:
-    "Full Stack developer with 1+ years of experience in building production-grade projects. I contribute to Open Source, and regularly participate in hackathons and tech events. Beyond fullstack development, I am also passionate about community-driven technology, content creation and entrepreneurship.",
+  summary: (
+    <>
+      <span className="underline underline-offset-4 transition-colors duration-200 hover:text-foreground">
+        Full Stack developer with 1+ years of experience{" "}
+      </span>
+      in building production-grade projects. I contribute to <span className="underline underline-offset-4 transition-colors duration-200 hover:text-foreground">Open Source</span>, and
+      regularly participate in <span className="underline underline-offset-4 transition-colors duration-200 hover:text-foreground">hackathons and tech events
+      </span>
+      . Beyond fullstack development, I am also passionate about{" "}
+      <span className="underline underline-offset-4 transition-colors duration-200 hover:text-foreground">
+        community-driven technology
+      </span>
+      , <span className="underline underline-offset-4 transition-colors duration-200 hover:text-foreground">content creation</span>{" "}
+      and <span className="underline underline-offset-4 transition-colors duration-200 hover:text-foreground">entrepreneurship</span>
+      .
+    </>
+  ),
   avatarUrl: "/me.png",
   skills: [
     { name: "React", icon: ReactLight },
@@ -60,7 +75,7 @@ export const DATA = {
     { href: "/blog", icon: NotebookIcon, label: "Blog" },
   ],
   contact: {
-    email: "shuklanandalal@gmail.com",
+    email: "shuklanandalal@gmaill.com",
     tel: "+9778368234868",
     social: {
       GitHub: {
@@ -132,8 +147,12 @@ export const DATA = {
       ],
       urls: [
         {
-          label: "Live Website",
+          label: "Website",
           href: "https://passtheexcellence.com",
+        },
+        {
+          label: "Github",
+          href: "https://github.com/nandalalshukla/passtheexcellence",
         },
       ],
     },
@@ -142,11 +161,18 @@ export const DATA = {
     {
       school: "Sharda University",
       href: "https://sharda.ac.in",
-      degree:
-        "Bachelor of Technology (B.Tech) - Computer Science and Engineering",
       logoUrl: "/sharda.png",
       start: "2024",
       end: "Present",
+      program: "Bachelor of Technology (B.Tech)",
+      specialization: "Computer Science and Engineering",
+      details: [
+        "Pursuing Bachelor of Technology (B.Tech) in Computer Science and Engineering.",
+        "Maintaining a cumulative CGPA of 9.274.",
+      ],
+      highlights: [
+        "COMPEX Scholarship recipient, fully funded by the Embassy of India in Nepal based on academic excellence.",
+      ],
     },
   ],
   projects: [
@@ -266,7 +292,12 @@ export const DATA = {
       description:
         "Built a website to educate people about habitable exoplanets and the possibility of life on them. Explored the cosmos through interactive visualization and data-driven insights.",
       image: "",
-      links: [],
+      links: [
+        {
+          label: "NASA Space Apps Challenge",
+          href: "https://www.spaceappschallenge.org/2023/find-a-team/creative-astrophiles/?tab=project",
+        },
+      ],
     },
     {
       title: "Smart India Hackathon",
@@ -275,7 +306,12 @@ export const DATA = {
       description:
         "Developed a Resume-CV Matcher that helps HR teams easily filter the best candidates matching to their job descriptions from a large pool of candidates. Leveraging advanced matching algorithms for efficient recruitment.",
       image: "",
-      links: [],
+      links: [
+        {
+          label: "Website",
+          href: "https://sih.gov.in/sih2025PS",
+        },
+      ],
     },
     {
       title: "WICS Online Hackathon",
@@ -284,7 +320,12 @@ export const DATA = {
       description:
         "Created Sharda Online Library, an online library platform for the university. Providing students with digital access to educational resources and research materials.",
       image: "",
-      links: [],
+      links: [
+        {
+          label: "Youtube",
+          href: "https://youtu.be/gcgYS4RhYzs",
+        },
+      ],
     },
   ],
 } as const;
