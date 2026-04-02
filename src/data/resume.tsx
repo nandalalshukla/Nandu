@@ -9,7 +9,7 @@ import { Postgresql } from "@/components/icons/svgs/postgresql";
 import { Docker } from "@/components/icons/svgs/docker";
 import { Kubernetes } from "@/components/icons/svgs/kubernetes";
 import { Java } from "@/components/icons/svgs/java";
-import { Csharp } from "@/components/icons/svgs/csharp";
+// import { Csharp } from "@/components/icons/svgs/csharp";
 
 export const DATA = {
   name: "Nandalal Shukla",
@@ -110,10 +110,32 @@ export const DATA = {
       logoUrl: "/ptelogo2.png",
       start: "Jan 2025",
       end: "Present",
-      work: "Single handedly Developed and deployed a full-stack educational platform with features including course enrollment, quizzes, contact forms, certificate generator etc. Built using React, Next.js, TypeScript, Tailwind CSS. Did the SEO and also created the google my business profile for the educational institute.",
-      impact:
-        "Drastically increased the institutes visibility on google searches by ranking the website in top 5 on google searches in its desired keyword. Simplified course enrollment, increased students engagement through quizzes and automated repititive tasks by creating internal tools",
-      urls: ["https://passtheexcellence.com"],
+      work: [
+        "Built and deployed the institute's full-stack educational platform end-to-end as the sole developer.",
+        "Implemented course enrollment, quizzes, contact forms, certificate generation, and internal workflow tools.",
+        "Handled SEO improvements and set up the institute's Google Business presence to strengthen discoverability.",
+      ],
+      impact: [
+        "Ranked the website in the top 5 Google results for its target keyword.",
+        "Made student enrollment and inquiry flows simpler and faster to use.",
+        "Improved engagement through quizzes and reduced repetitive manual work with internal tools.",
+      ],
+      tools: [
+        "React",
+        "Next.js",
+        "TypeScript",
+        "Tailwind CSS",
+        "Nodemailer",
+        "Vercel",
+        "Git",
+        "GitHub",
+      ],
+      urls: [
+        {
+          label: "Live Website",
+          href: "https://passtheexcellence.com",
+        },
+      ],
     },
   ],
   education: [
@@ -157,8 +179,18 @@ export const DATA = {
           href: "https://notes-pyqssharda.vercel.app/",
           icon: <Icons.globe className="size-3" />,
         },
+        {
+          type: "Github",
+          href: "https://github.com/nandalalshukla/shardaonlinelibrary",
+          icon: <Icons.github className="size-3" />,
+        },
+        {
+          type: "Devpost",
+          href: "https://devpost.com/software/sharda-online-library",
+          icon: <Icons.github className="size-3" />,
+        },
       ],
-      image: "",
+      image: "sol.png",
       video: "",
     },
     {
@@ -186,7 +218,7 @@ export const DATA = {
           icon: <Icons.globe className="size-3" />,
         },
       ],
-      image: "",
+      image: "pte.png",
       video: "",
     },
     {
@@ -209,10 +241,20 @@ export const DATA = {
         {
           type: "NPM",
           href: "https://www.npmjs.com/package/@nandalalshukla/auth-hero",
+          icon: <Icons.npm className="size-3" />,
+        },
+        {
+          type: "Github",
+          href: "https://github.com/nandalalshukla/AuthHero",
+          icon: <Icons.github className="size-3" />,
+        },
+        {
+          type: "Website",
+          href: "https://auth-hero-xi.vercel.app/",
           icon: <Icons.globe className="size-3" />,
         },
       ],
-      image: "",
+      image: "authhero.png",
       video: "",
     },
   ],

@@ -8,8 +8,19 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { DATA } from "@/data/resume";
-import { ChevronDown, ChevronRight, Globe, Github } from "lucide-react";
+import { Icons } from "@/components/icons";
+import { ChevronDown, ChevronRight, Globe, Github, Sparkles } from "lucide-react";
 import { cn } from "@/lib/utils";
+import Link from "next/link";
+
+const toolIconByName = Object.fromEntries(
+  DATA.skills.map((skill) => [skill.name, skill.icon]),
+);
+
+const fallbackToolIcons: Record<string, React.ComponentType<{ className?: string }>> = {
+  GitHub: Icons.github,
+  Nodemailer: Icons.email,
+};
 
 function LogoImage({ src, alt }: { src: string; alt: string }) {
   const [imageError, setImageError] = useState(false);
@@ -27,6 +38,30 @@ function LogoImage({ src, alt }: { src: string; alt: string }) {
       className="size-8 md:size-10 p-1 border rounded-full shadow ring-2 ring-border overflow-hidden object-contain flex-none"
       onError={() => setImageError(true)}
     />
+  );
+}
+
+function PointList({
+  items,
+  accentClassName,
+}: {
+  items: readonly string[];
+  accentClassName: string;
+}) {
+  return (
+    <ul className="space-y-2">
+      {items.map((item) => (
+        <li key={item} className="flex items-start gap-3">
+          <span
+            className={cn(
+              "mt-2 block h-1.5 w-1.5 shrink-0 rounded-full",
+              accentClassName,
+            )}
+          />
+          <span className="leading-relaxed text-muted-foreground">{item}</span>
+        </li>
+      ))}
+    </ul>
   );
 }
 
@@ -77,44 +112,69 @@ export default function WorkSection() {
             </div>
           </AccordionTrigger>
           <AccordionContent className="mt-4 space-y-4 text-sm text-muted-foreground">
-            {/* Work Description */}
             <div className="space-y-2">
               <h3 className="font-semibold text-foreground">What I Did</h3>
-              <p className="leading-relaxed">{work.work}</p>
+              <PointList items={work.work} accentClassName="bg-foreground/80" />
             </div>
 
-            {/* Impact - Prominently Displayed */}
             {work.impact && (
               <div className="space-y-3">
                 <h3 className="font-semibold text-foreground">Impact & Results</h3>
-                <div className="p-4 rounded-lg bg-green-500/10 border border-green-500/30 hover:border-green-500/50 transition-colors">
-                  <p className="leading-relaxed text-foreground">{work.impact}</p>
+                <div className="rounded-xl border border-border bg-muted/40 p-4 transition-colors hover:bg-muted/60">
+                  <PointList
+                    items={work.impact}
+                    accentClassName="bg-foreground"
+                  />
                 </div>
               </div>
             )}
 
-            {/* URLs with Icons */}
+            {work.tools && work.tools.length > 0 && (
+              <div className="space-y-3">
+                <h3 className="font-semibold text-foreground">Tech Used</h3>
+                <div className="flex flex-wrap gap-2">
+                  {work.tools.map((tool) => {
+                    const Icon =
+                      toolIconByName[tool] ?? fallbackToolIcons[tool] ?? Sparkles;
+
+                    return (
+                      <div
+                        key={tool}
+                        className="inline-flex items-center gap-2 rounded-full border border-border bg-background px-3 py-1.5 text-xs font-medium text-foreground"
+                      >
+                        <Icon className="size-3.5 shrink-0" />
+                        <span>{tool}</span>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+            )}
+
             {work.urls && work.urls.length > 0 && (
               <div className="space-y-3">
-                <h3 className="font-semibold text-foreground">Links</h3>
+                <h3 className="font-semibold text-foreground">Proof of Work</h3>
                 <div className="flex flex-wrap gap-3">
                   {work.urls.map((url) => {
-                    const isGithub = url.includes("github.com");
+                    const isGithub = url.href.includes("github.com");
                     return (
-                      <a
-                        key={url}
-                        href={url}
+                      <Link
+                        key={url.href}
+                        href={url.href}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 px-3 py-2 rounded-lg bg-muted hover:bg-muted/80 transition-colors text-sm font-medium"
+                        className="inline-flex items-center gap-2 rounded-lg border border-border bg-muted/60 px-3 py-2 text-sm font-medium text-foreground transition-colors hover:bg-muted"
                       >
                         {isGithub ? (
                           <Github className="w-4 h-4" />
                         ) : (
                           <Globe className="w-4 h-4" />
                         )}
-                        {isGithub ? "GitHub" : "Website"}
-                      </a>
+                        <span>{url.label}</span>
+                        <span className="text-xs text-muted-foreground">
+                          {new URL(url.href).hostname.replace("www.", "")}
+                        </span>
+                      </Link>
                     );
                   })}
                 </div>
