@@ -207,10 +207,11 @@
     border-spacing: 0;
   }
 
-  .prose :where(th):not(:where([class~="not-prose"] *)),
-  .prose :where(td):not(:where([class~="not-prose"] *)) {
-    @apply px-6 py-4 align-middle m-0 whitespace-nowrap;
-  }
+.prose :where(th),
+.prose :where(td) {
+  @apply px-6 py-4 align-middle m-0 whitespace-normal;
+  word-break: break-word;
+}
 
   .prose tr{
     @apply hover:bg-accent/50! transition-colors! cursor-pointer! h-10!;

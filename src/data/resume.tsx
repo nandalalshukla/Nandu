@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { ExpressJsIcon, Icons } from "@/components/icons";
 import { HomeIcon, NotebookIcon, Brain } from "lucide-react";
 import { ReactLight } from "@/components/icons/svgs/reactLight";
@@ -11,6 +12,9 @@ import { Kubernetes } from "@/components/icons/svgs/kubernetes";
 import { Java } from "@/components/icons/svgs/java";
 // import { Csharp } from "@/components/icons/svgs/csharp";
 
+const summaryLinkClassName =
+  "underline underline-offset-4 transition-colors duration-200 hover:text-foreground cursor-pointer";
+
 export const DATA = {
   name: "Nandalal Shukla",
   initials: "NS",
@@ -21,18 +25,29 @@ export const DATA = {
     "Full-Stack Developer | Building production-grade web applications with React, Next.js, and Node.js and typescript. Turning ideas into products that users actually love.",
   summary: (
     <>
-      <span className="underline underline-offset-4 transition-colors duration-200 hover:text-foreground">
+      <Link href="/work" className={summaryLinkClassName}>
         Full Stack developer with 1+ years of experience{" "}
-      </span>
-      in building production-grade projects. I contribute to <span className="underline underline-offset-4 transition-colors duration-200 hover:text-foreground">Open Source</span>, and
-      regularly participate in <span className="underline underline-offset-4 transition-colors duration-200 hover:text-foreground">hackathons and tech events
-      </span>
+      </Link>
+      in building production-grade projects. I contribute to{" "}
+      <Link href="/open-source" className={summaryLinkClassName}>
+        Open Source
+      </Link>
+      , and regularly participate in{" "}
+      <Link href="/hackathons" className={summaryLinkClassName}>
+        hackathons and tech events
+      </Link>
       . Beyond fullstack development, I am also passionate about{" "}
-      <span className="underline underline-offset-4 transition-colors duration-200 hover:text-foreground">
+      <Link href="/projects" className={summaryLinkClassName}>
         community-driven technology
-      </span>
-      , <span className="underline underline-offset-4 transition-colors duration-200 hover:text-foreground">content creation</span>{" "}
-      and <span className="underline underline-offset-4 transition-colors duration-200 hover:text-foreground">entrepreneurship</span>
+      </Link>
+      ,{" "}
+      <Link href="/content-creation" className={summaryLinkClassName}>
+        content creation
+      </Link>{" "}
+      and{" "}
+      <Link href="/projects" className={summaryLinkClassName}>
+        entrepreneurship
+      </Link>
       .
     </>
   ),

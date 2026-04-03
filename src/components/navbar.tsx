@@ -24,8 +24,9 @@ export default function Navbar() {
   }
 
   return (
-    <div className="pointer-events-none fixed inset-x-0 bottom-4 z-30">
-      <Dock className="z-50 pointer-events-auto relative h-14 p-2 w-fit mx-auto flex gap-2 border bg-card/90 backdrop-blur-3xl shadow-[0_0_10px_3px] shadow-primary/5">
+    <div className="pointer-events-none fixed inset-x-0 bottom-0 z-30 mx-auto mb-4 flex origin-bottom h-full max-h-14">
+      <div className="fixed bottom-0 inset-x-0 h-16 w-full bg-background to-transparent backdrop-blur-lg [-webkit-mask-image:linear-gradient(to_top,black,transparent)] dark:bg-background"></div>
+      <Dock className="z-50 pointer-events-auto relative mx-auto flex h-full items-center px-1 bg-card/90 backdrop-blur-3xl shadow-[0_0_10px_3px] shadow-primary/5 border rounded-full transform-gpu overflow-x-auto overflow-y-hidden max-w-[95vw] [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] gap-1 sm:gap-2">
         {DATA.navbar.map((item) => {
           const isExternal = item.href.startsWith("http");
           return (
