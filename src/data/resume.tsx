@@ -305,7 +305,7 @@ export const DATA = {
       location: "Global",
       description:
         "Built a website to educate people about habitable exoplanets and the possibility of life on them. Explored the cosmos through interactive visualization and data-driven insights.",
-      image: "",
+      image: "/nasaspaceapps.jpeg",
       links: [
         {
           label: "NASA Space Apps Challenge",
@@ -319,7 +319,7 @@ export const DATA = {
       location: "India",
       description:
         "Developed a Resume-CV Matcher that helps HR teams easily filter the best candidates matching to their job descriptions from a large pool of candidates. Leveraging advanced matching algorithms for efficient recruitment.",
-      image: "",
+      image: "/sih.jpg",
       links: [
         {
           label: "Website",
@@ -333,7 +333,7 @@ export const DATA = {
       location: "Online",
       description:
         "Created Sharda Online Library, an online library platform for the university. Providing students with digital access to educational resources and research materials.",
-      image: "",
+      image: "/wics.png",
       links: [
         {
           label: "Youtube",
