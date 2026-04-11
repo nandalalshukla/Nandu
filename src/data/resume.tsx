@@ -116,15 +116,14 @@ export const DATA = {
       },
       Youtube: {
         name: "Youtube",
-        url: "#",
+        url: "https://www.youtube.com/@nandalalshukla",
         icon: Icons.youtube,
         navbar: true,
       },
       email: {
         name: "Send Email",
-        url: "#",
+        url: "mailto:shuklanandalal@gmail.com",
         icon: Icons.email,
-
         navbar: false,
       },
     },
