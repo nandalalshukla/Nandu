@@ -80,7 +80,7 @@ export default function RootLayout({
         <ThemeProvider attribute="class" defaultTheme="light">
           <TooltipProvider delayDuration={0}>
             <div className="absolute inset-[0] overflow-hidden z-0">
-              <FlickeringGrid
+              {/* <FlickeringGrid
                 className="h-[100px] w-full"
                 squareSize={2}
                 gridGap={2}
@@ -89,7 +89,7 @@ export default function RootLayout({
                   WebkitMaskImage:
                     "linear-gradient(to bottom, black, transparent)",
                 }}
-              />
+              /> */}
             </div>
             <div className="relative z-10 mx-auto w-full px-4 py-12 pb-24 sm:px-6 sm:py-24 max-w-2xl sm:max-w-3xl ">
               {children}
