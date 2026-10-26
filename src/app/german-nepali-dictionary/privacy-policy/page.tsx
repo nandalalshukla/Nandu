@@ -92,14 +92,14 @@ export default function GermanNepaliPrivacyPolicyPage() {
             <p className="leading-7 text-slate-600">
               <strong>App:</strong> German Nepali Dictionary
               <br />
-              <strong>Developer:</strong> REPLACE WITH YOUR DEVELOPER NAME
+              <strong>Developer:</strong> Nandalal Shukla
               <br />
-              <strong>Email:</strong>{" "}
+              <strong>Email:</strong>
               <a
-                href="mailto:REPLACE_WITH_YOUR_EMAIL"
+                href="mailto:shuklanandalal@gmail.com"
                 className="text-blue-700 underline underline-offset-4"
               >
-                REPLACE_WITH_YOUR_EMAIL
+                shuklanandalal@gmail.com
               </a>
             </p>
           </section>
