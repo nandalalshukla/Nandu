@@ -10,6 +10,7 @@ import { Postgresql } from "@/components/icons/svgs/postgresql";
 import { Docker } from "@/components/icons/svgs/docker";
 import { Kubernetes } from "@/components/icons/svgs/kubernetes";
 import { Java } from "@/components/icons/svgs/java";
+import { JavascriptIcon } from "@/components/icons/tech";
 // import { Csharp } from "@/components/icons/svgs/csharp";
 
 const summaryLinkClassName =
@@ -18,11 +19,11 @@ const summaryLinkClassName =
 export const DATA = {
   name: "Nandalal Shukla",
   initials: "NS",
-  url: "https://nandalalshukla.com",
+  url: "https://nandalalshukla.com.np",
   location: "Greater Noida, India",
   locationLink: "https://www.google.com/maps/place/greater+noida",
   description:
-    "Full-Stack Developer | Building production-grade web applications with React, Next.js, and Node.js and typescript. Turning ideas into products that users actually love.",
+    "Full-Stack Developer passionate about building real-world, scalable web applications across frontend, backend, databases, and AI integrations.",
   summary: (
     <>
       <Link href="/work" className={summaryLinkClassName}>
@@ -53,6 +54,7 @@ export const DATA = {
   ),
   avatarUrl: "/me.png",
   skills: [
+    { name: "JavaScript", icon: JavascriptIcon },
     { name: "React", icon: ReactLight },
     { name: "Next.js", icon: NextjsIconDark },
     { name: "TypeScript", icon: Typescript },
@@ -63,6 +65,9 @@ export const DATA = {
     { name: "Zustand", icon: Icons.zustand },
     { name: "React Query", icon: Icons.reactQuery },
     { name: "Prisma", icon: Icons.prisma },
+    { name: "Drizzle", icon: Icons.drizzleOrm },
+    { name: "FastAPI", icon: undefined },
+    { name: "Vercel AI SDK", icon: Icons.vertexAi },
     { name: "Tailwind CSS", icon: Icons.tailwindCss },
     { name: "React Hook Form", icon: Icons.reactHookForm },
     { name: "Zod", icon: Icons.zod },
@@ -71,10 +76,15 @@ export const DATA = {
     { name: "ESLint", icon: Icons.eslint },
     { name: "Python", icon: Python },
     { name: "Java", icon: Java },
+    { name: "C", icon: undefined },
+    { name: "SQL", icon: undefined },
+    { name: "Azure", icon: undefined },
     { name: "Docker", icon: Docker },
     { name: "Kubernetes", icon: Kubernetes },
     { name: "Git", icon: Icons.git },
     { name: "GitHub", icon: Icons.github },
+    { name: "GitHub Actions", icon: undefined },
+    { name: "VS Code", icon: Icons.vscode },
     { name: "Bash", icon: Icons.bash },
     { name: "Redis", icon: Icons.redis },
     { name: "AI Agents", icon: Brain },
@@ -90,8 +100,8 @@ export const DATA = {
     { href: "/blog", icon: NotebookIcon, label: "Blog" },
   ],
   contact: {
-    email: "shuklanandalal@gmaill.com",
-    tel: "+9778368234868",
+    email: "shuklanandalal@gmail.com",
+    tel: "+9779817628971",
     social: {
       GitHub: {
         name: "GitHub",
@@ -138,7 +148,7 @@ export const DATA = {
       title: "Full-Stack Developer",
       logoUrl: "/ptelogo2.png",
       start: "Jan 2025",
-      end: "Present",
+      end: "Dec 2025",
       work: [
         "Built and deployed the institute's full-stack educational platform end-to-end as the sole developer.",
         "Implemented course enrollment, quizzes, contact forms, certificate generation, and internal workflow tools.",
@@ -170,6 +180,36 @@ export const DATA = {
         },
       ],
     },
+    {
+      company: "Chem School",
+      href: "https://chemschool.academy",
+      badges: [],
+      location: "Remote",
+      title: "Backend Developer",
+      logoUrl: "",
+      start: "Feb 2026",
+      end: "Jun 2026",
+      work: [
+        "Built secure email/password and Google OAuth authentication with Better Auth and role-based access control for Admin, Tutor, and Student roles.",
+        "Developed a custom admin panel and CMS for managing users, chemistry notes, chapters, blogs, and broadcast emails through Resend.",
+        "Implemented a WordPress-style blog CMS with Tiptap, tutor booking, and role-specific dashboards for admins, tutors, and students.",
+      ],
+      impact: [],
+      tools: [
+        "Node.js",
+        "TypeScript",
+        "Better Auth",
+        "Tiptap",
+        "Resend",
+        "PostgreSQL",
+      ],
+      urls: [
+        {
+          label: "Website",
+          href: "https://chemschool.academy",
+        },
+      ],
+    },
   ],
   education: [
     {
@@ -182,7 +222,7 @@ export const DATA = {
       specialization: "Computer Science and Engineering",
       details: [
         "Pursuing Bachelor of Technology (B.Tech) in Computer Science and Engineering.",
-        "Maintaining a cumulative CGPA of 9.274.",
+        "Maintaining a cumulative CGPA of 9.5.",
       ],
       highlights: [
         "COMPEX Scholarship recipient, fully funded by the Embassy of India in Nepal based on academic excellence.",
@@ -191,74 +231,56 @@ export const DATA = {
   ],
   projects: [
     {
-      title: "Sharda Online Library",
-      href: "https://notes-pyqssharda.vercel.app/",
-      dates: "2024",
+      title: "Sharda Social",
+      href: "https://sharda.social/",
+      dates: "Featured project",
       active: true,
       description:
-        "Full-stack web platform providing easy access to previous year questions (PYQs), notes, and syllabus for Sharda University students. Built with secure authentication, role-based authorization, file uploads, and a RAG-based AI chatbot for university-related queries.",
+        "Social media platform and online library for Sharda University students. Students can create accounts, manage posts with CRUD operations, and share study materials. Reached 1,000+ unique visitors at peak with 200+ registered users.",
       technologies: [
-        "React",
         "Next.js",
-        "TypeScript",
-        "Tailwind CSS",
-        "Node.js",
         "Express.js",
         "MongoDB",
-        "Mongoose",
-        "Zod",
-        "Multer",
-        "Nodemailer",
         "Cloudinary",
-        "Vercel",
+        "Resend",
         "Render",
       ],
       links: [
         {
           type: "Website",
-          href: "https://notes-pyqssharda.vercel.app/",
+          href: "https://sharda.social/",
           icon: <Icons.globe className="size-3" />,
         },
-        {
-          type: "Github",
-          href: "https://github.com/nandalalshukla/shardaonlinelibrary",
-          icon: <Icons.github className="size-3" />,
-        },
-        {
-          type: "Devpost",
-          href: "https://devpost.com/software/sharda-online-library",
-          icon: <Icons.github className="size-3" />,
-        },
       ],
-      image: "sol.png",
+      image: "",
       video: "",
     },
     {
-      title: "PASS The Excellence",
-      href: "https://passtheexcellence.com",
-      dates: "2024 - 2025",
+      title: "PhotoMatch AI",
+      href: "https://photomatch.southeastasia.cloudapp.azure.com/",
+      dates: "Featured project",
       active: true,
       description:
-        "Educational institute platform with features including course enrollment, contact forms, quizzes, and online study resources. Integrated Google Sheets using Apps Script for seamless data collection and management.",
+        "AI-powered photo search for large event albums: users upload a selfie to find their photos using InsightFace models and cosine-similarity vector search. Built with a TypeScript and Express.js backend, Next.js frontend, FastAPI services, PostgreSQL with pgvector, PgBoss, Cloudinary, and ONNX Runtime.",
       technologies: [
-        "React",
-        "Next.js",
         "TypeScript",
-        "Tailwind CSS",
-        "Nodemailer",
-        "Google Sheets API",
-        "Vercel",
-        "Git",
-        "GitHub",
+        "Express.js",
+        "Next.js",
+        "FastAPI",
+        "PostgreSQL",
+        "pgvector",
+        "PgBoss",
+        "Cloudinary",
+        "ONNX Runtime",
       ],
       links: [
         {
           type: "Website",
-          href: "https://passtheexcellence.com",
+          href: "https://photomatch.southeastasia.cloudapp.azure.com/",
           icon: <Icons.globe className="size-3" />,
         },
       ],
-      image: "pte.png",
+      image: "",
       video: "",
     },
     {
@@ -267,7 +289,7 @@ export const DATA = {
       dates: "2024",
       active: true,
       description:
-        "NPM package with 300+ downloads. Ready-to-use authentication system with email/password signup, magic link verification, OAuth integration (Google, GitHub, Facebook), and multi-factor authentication using authenticator apps.",
+        "Ready-made authentication service built from scratch with email/password and OAuth authentication plus multi-factor authentication. Published on NPM with 500+ downloads.",
       technologies: [
         "TypeScript",
         "Express.js",
@@ -295,6 +317,24 @@ export const DATA = {
         },
       ],
       image: "authhero.png",
+      video: "",
+    },
+    {
+      title: "Realtime Chess",
+      href: "https://chess.nandalalshukla.com.np/",
+      dates: "Featured project",
+      active: true,
+      description:
+        "Realtime two-player chess application built with TypeScript, Express.js, and WebSockets.",
+      technologies: ["TypeScript", "Express.js", "WebSockets"],
+      links: [
+        {
+          type: "Website",
+          href: "https://chess.nandalalshukla.com.np/",
+          icon: <Icons.globe className="size-3" />,
+        },
+      ],
+      image: "",
       video: "",
     },
   ],
