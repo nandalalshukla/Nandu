@@ -20,7 +20,7 @@ const Resume = () => {
         shadow-md z-50
         pointer-events-none group-hover:pointer-events-auto group-focus-within:pointer-events-auto"
       >
-        <img src="/resume.jpg" className="w-full h-full object-cover" />
+        <img src="/resume.png" className="w-full h-full object-cover" />
       </div>
     </div>
   );
